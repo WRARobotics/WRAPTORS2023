@@ -1,10 +1,10 @@
-# WARNING: There is currently an issue causing this code to not work with MK4i's, we are working on finding the issue, as soon as it is fixed this warning will be removed. If you would like to follow the progress/help test please see this [issue](https://github.com/Team364/BaseFalconSwerve/issues/8).
-**Once ths code is tested on an actual robot sometime in the next week or so, this warning shall be removed.**
+# WRAPTORS 2023 FRC Charged Up code </br>
 
-# BaseFalconSwerve </br>
+Based on Team 364's Falcon Base Swerve
 
-**Basic Swerve Code for a Swerve Module using Falcon Motors, a CTRE CANCoder, and a CTRE Pigeon Gyro** </br>
-This code was designed with Swerve Drive Specialties MK3, MK4, and MK4i style modules in mind, but should be easily adaptable to other styles of modules.</br>
+Made changes to adopt to full NEO motors (drive and turn), CTRE SRX Mag Encoders (connected to roborio with breakout boards), and CTRE Pigeon 2.
+
+
 
 **Setting Constants**
 ----
@@ -12,10 +12,10 @@ The following things must be adjusted to your robot and module's specific consta
 These instructions are mostly followable from Step 
 1. Gyro Settings: ```pigeonID``` and ```invertGyro``` (ensure that the gyro rotation is CCW+ (Counter Clockwise Positive)
 2. ```chosenModule```: 
-<br>If you are using a COTS SDS Module (more modules will be added in the future), set the module and drive ratio you are using here. 
-<br>This will automatically set certain constants for the specific module required to function properly. 
-<br><b><u>If you are not using a COTS supported module, you should delete this variable, and fix all the errors that pop up with correct values for the module you are using</b></u>
-<br> Here is a list of the constants that will automatically be set if you are using a supported module:
+   <br>If you are using a COTS SDS Module (more modules will be added in the future), set the module and drive ratio you are using here. 
+   <br>This will automatically set certain constants for the specific module required to function properly. 
+   <br><b><u>If you are not using a COTS supported module, you should delete this variable, and fix all the errors that pop up with correct values for the module you are using</b></u>
+   <br> Here is a list of the constants that will automatically be set if you are using a supported module:
     * Wheel Circumference
     * Angle Motor Invert
     * Drive Motor Invert
@@ -23,7 +23,7 @@ These instructions are mostly followable from Step
     * Angle Motor Gear Ratio
     * Drive Motor Gear Ratio
     * Angle Falcon Motor PID Values
-    
+   
 3. ```trackWidth```: Center to Center distance of left and right modules in meters.
 4. ```wheelBase```: Center to Center distance of front and rear module wheels in meters.
 5. ```wheelCircumference```: Cirumference of the wheel (including tread) in meters. <br><b>If you are using a supported module, this value will be automatically set.</b>
