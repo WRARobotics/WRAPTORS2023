@@ -2,7 +2,7 @@
 
 Based on Team 364's Falcon Base Swerve
 
-Made changes to adopt to full NEO motors (drive and turn), CTRE SRX Mag Encoders (connected to roborio with breakout boards), and CTRE Pigeon 2.
+Made changes to adopt to full NEO motors (drive and turn), CTRE SRX Mag Encoders (connected to roborio with breakout boards), Joysticks instead of XBoxControllers, and CTRE Pigeon 2.
 
 
 
