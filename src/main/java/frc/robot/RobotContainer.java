@@ -22,7 +22,7 @@ public class RobotContainer {
     private final Joystick joystick = new Joystick(0);
 
     /* Driver Buttons */
-    private Trigger zeroGyro = new JoystickButton(joystick, 1)
+    private Trigger zeroGyro = new JoystickButton(joystick, 1);
 
     /* Subsystems */
     private final Swerve s_Swerve = new Swerve();
