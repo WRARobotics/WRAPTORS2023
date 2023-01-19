@@ -5,6 +5,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.lib.math.Conversions;
 import frc.lib.util.CTREModuleState;
 import frc.lib.util.SwerveModuleConstants;
@@ -35,7 +36,7 @@ public class SwerveModule {
         this.angleOffset = moduleConstants.angleOffset;
         
         /* Angle Encoder Config */
-        angleEncoder = new Encoder(moduleConstants.encoderA, moduleConstants.encoderA);
+        angleEncoder = new Encoder(moduleConstants.encoderA, moduleConstants.encoderB);
         configAngleEncoder();
 
         /* Angle Motor Config */
@@ -72,8 +73,8 @@ public class SwerveModule {
         Rotation2d angle = (Math.abs(desiredState.speedMetersPerSecond) <= (Constants.Swerve.maxSpeed * 0.01)) ? lastAngle : desiredState.angle; 
         //Prevent rotating module if speed is less then 1%. Prevents Jittering.
         
-
-        angleController.setReference(Conversions.degreesToNEO(angle.getDegrees(), Constants.Swerve.angleGearRatio),ControlType.kPosition);
+        SmartDashboard.putBoolean("Turning", true);
+        angleController.setReference(angle.getDegrees(),ControlType.kPosition);
         lastAngle = angle;
     }
 
@@ -95,11 +96,13 @@ public class SwerveModule {
     }
 
     private void configAngleMotor(){
+        angleController = mAngleMotor.getPIDController();
         angleIntegratedEncoder = mAngleMotor.getEncoder();
         resetToAbsolute();
     }
 
     private void configDriveMotor(){   
+        driveController = mDriveMotor.getPIDController();
         driveIntegratedEncoder = mDriveMotor.getEncoder();     
     }
 

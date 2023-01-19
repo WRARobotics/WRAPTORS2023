@@ -128,7 +128,7 @@ public class Conversions {
     }
 
     public static double degreesToNEO(double degrees, double gearRatio) {
-        return degrees / (360.0 / (gearRatio * 42.0));
+        return degrees / (360.0 / (gearRatio * 1));
     }
 
     public static double NEOToDegrees(double enc, double gearRatio) {
