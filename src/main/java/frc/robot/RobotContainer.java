@@ -35,7 +35,7 @@ public class RobotContainer {
                 s_Swerve, 
                 () -> -joystick.getY(),
                 () -> -joystick.getX(),
-                () -> -joystick.getTwist(),
+                () -> joystick.getTwist(),
                 () -> joystick.getTrigger()
             )
         );
