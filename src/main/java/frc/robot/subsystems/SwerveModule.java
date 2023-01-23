@@ -10,7 +10,6 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.DutyCycleEncoder;
-import edu.wpi.first.wpilibj.Encoder;
 import frc.lib.config.SwerveModuleConstants;
 import frc.lib.util.CANSparkMaxUtil.Usage;
 import frc.lib.util.CANSparkMaxUtil;
