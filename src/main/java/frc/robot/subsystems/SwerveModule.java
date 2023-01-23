@@ -9,6 +9,7 @@ import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
+import edu.wpi.first.wpilibj.DutyCycleEncoder;
 import edu.wpi.first.wpilibj.Encoder;
 import frc.lib.config.SwerveModuleConstants;
 import frc.lib.util.CANSparkMaxUtil.Usage;
@@ -28,7 +29,7 @@ public class SwerveModule {
 
   private RelativeEncoder driveEncoder;
   private RelativeEncoder integratedAngleEncoder;
-  private Encoder angleEncoder;
+  private DutyCycleEncoder angleEncoder;
 
   private final SparkMaxPIDController driveController;
   private final SparkMaxPIDController angleController;
@@ -42,7 +43,7 @@ public class SwerveModule {
     angleOffset = moduleConstants.angleOffset;
 
     /* Angle Encoder Config */
-    angleEncoder = new Encoder(moduleConstants.encoderA,moduleConstants.encoderB);
+    angleEncoder = new DutyCycleEncoder(moduleConstants.encoderPWMChannel);
     configAngleEncoder();
 
     /* Angle Motor Config */
@@ -140,7 +141,7 @@ public class SwerveModule {
   }
 
   public Rotation2d getCanCoder() {
-    return Rotation2d.fromDegrees(angleEncoder.getDistance());
+    return Rotation2d.fromDegrees(angleEncoder.getAbsolutePosition());
   }
 
   public SwerveModuleState getState() {
