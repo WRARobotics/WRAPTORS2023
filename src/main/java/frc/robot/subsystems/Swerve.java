@@ -28,10 +28,10 @@ public class Swerve extends SubsystemBase {
         zeroGyro();
 
         mSwerveMods = new SwerveModule[] {
-                new SwerveModule(1, Constants.Swerve.Mod1.constants),
-                new SwerveModule(2, Constants.Swerve.Mod2.constants),
-                new SwerveModule(3, Constants.Swerve.Mod3.constants),
-                new SwerveModule(4, Constants.Swerve.Mod4.constants)
+                new SwerveModule(0, Constants.Swerve.Mod1.constants),
+                new SwerveModule(1, Constants.Swerve.Mod2.constants),
+                new SwerveModule(2, Constants.Swerve.Mod3.constants),
+                new SwerveModule(3, Constants.Swerve.Mod4.constants)
         };
 
         /*
@@ -81,7 +81,7 @@ public class Swerve extends SubsystemBase {
     }
 
     public SwerveModuleState[] getModuleStates() {
-        SwerveModuleState[] states = new SwerveModuleState[5];
+        SwerveModuleState[] states = new SwerveModuleState[4];
         for (SwerveModule mod : mSwerveMods) {
             states[mod.moduleNumber] = mod.getState();
         }
@@ -89,7 +89,7 @@ public class Swerve extends SubsystemBase {
     }
 
     public SwerveModulePosition[] getModulePositions() {
-        SwerveModulePosition[] positions = new SwerveModulePosition[5];
+        SwerveModulePosition[] positions = new SwerveModulePosition[4];
         for (SwerveModule mod : mSwerveMods) {
             positions[mod.moduleNumber] = mod.getPosition();
         }
