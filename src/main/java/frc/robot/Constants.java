@@ -13,7 +13,7 @@ public final class Constants {
   public static final class Swerve {
     public static final double stickDeadband = 0.1;
 
-    public static final int pigeonID = 6;
+    public static final int pigeonID = 20;
     public static final boolean invertGyro = false; // Always ensure Gyro is CCW+ CW-
 
     /* Drivetrain Constants */
@@ -86,7 +86,7 @@ public final class Constants {
       public static final int driveMotorID = 6;
       public static final int angleMotorID = 5;
       public static final int encoderPWMChannel = 1;
-      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(327.48046875);
+      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(0);
       public static final SwerveModuleConstants constants =
           new SwerveModuleConstants(driveMotorID, angleMotorID, encoderPWMChannel, angleOffset);
     }
@@ -96,7 +96,7 @@ public final class Constants {
       public static final int driveMotorID = 4;
       public static final int angleMotorID = 3;
       public static final int encoderPWMChannel = 2;
-      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(286.34765625);
+      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(0);
       public static final SwerveModuleConstants constants =
           new SwerveModuleConstants(driveMotorID, angleMotorID, encoderPWMChannel, angleOffset);
     }
@@ -106,7 +106,7 @@ public final class Constants {
       public static final int driveMotorID = 2;
       public static final int angleMotorID = 1;
       public static final int encoderPWMChannel = 3;
-      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(55.01953125);
+      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(0);
       public static final SwerveModuleConstants constants =
           new SwerveModuleConstants(driveMotorID, angleMotorID, encoderPWMChannel, angleOffset);
     }
@@ -116,7 +116,7 @@ public final class Constants {
       public static final int driveMotorID = 8;
       public static final int angleMotorID = 7;
       public static final int encoderPWMChannel = 4;
-      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(67.939453125);
+      public static final Rotation2d angleOffset = Rotation2d.fromDegrees(0);
       public static final SwerveModuleConstants constants =
           new SwerveModuleConstants(driveMotorID, angleMotorID, encoderPWMChannel, angleOffset);
     }

@@ -28,10 +28,10 @@ public class Swerve extends SubsystemBase {
         zeroGyro();
 
         mSwerveMods = new SwerveModule[] {
-            new SwerveModule(0, Constants.Swerve.Mod1.constants),
-            new SwerveModule(1, Constants.Swerve.Mod2.constants),
-            new SwerveModule(2, Constants.Swerve.Mod3.constants),
-            new SwerveModule(3, Constants.Swerve.Mod4.constants)
+            new SwerveModule(1, Constants.Swerve.Mod1.constants),
+            new SwerveModule(2, Constants.Swerve.Mod2.constants),
+            new SwerveModule(3, Constants.Swerve.Mod3.constants),
+            new SwerveModule(4, Constants.Swerve.Mod4.constants)
         };
 
         /* By pausing init for a second before setting module offsets, we avoid a bug with inverting motors.
@@ -82,7 +82,7 @@ public class Swerve extends SubsystemBase {
     }
 
     public SwerveModuleState[] getModuleStates(){
-        SwerveModuleState[] states = new SwerveModuleState[4];
+        SwerveModuleState[] states = new SwerveModuleState[5];
         for(SwerveModule mod : mSwerveMods){
             states[mod.moduleNumber] = mod.getState();
         }
@@ -90,7 +90,7 @@ public class Swerve extends SubsystemBase {
     }
 
     public SwerveModulePosition[] getModulePositions(){
-        SwerveModulePosition[] positions = new SwerveModulePosition[4];
+        SwerveModulePosition[] positions = new SwerveModulePosition[5];
         for(SwerveModule mod : mSwerveMods){
             positions[mod.moduleNumber] = mod.getPosition();
         }
@@ -116,8 +116,8 @@ public class Swerve extends SubsystemBase {
         swerveOdometry.update(getYaw(), getModulePositions());  
 
         for(SwerveModule mod : mSwerveMods){
-            SmartDashboard.putNumber("Mod " + mod.moduleNumber + " Cancoder", mod.getCanCoder().getDegrees());
-            SmartDashboard.putNumber("Mod " + mod.moduleNumber + " Integrated", mod.getPosition().angle.getDegrees());
+            SmartDashboard.putNumber("Mod " + mod.moduleNumber + " Magnetic Abs Encoder", mod.getMagEncoder().getDegrees());
+            SmartDashboard.putNumber("Mod " + mod.moduleNumber + " Integrated Encoder", mod.getPosition().angle.getDegrees());
             SmartDashboard.putNumber("Mod " + mod.moduleNumber + " Velocity", mod.getState().speedMetersPerSecond);    
         }
     }
